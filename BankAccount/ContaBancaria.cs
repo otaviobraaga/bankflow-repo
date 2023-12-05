@@ -2,9 +2,9 @@ using System;
 
 namespace BankAccount {
     public class ContaBancaria {
-        private string accNumber;
-        private string name;
-        private double saldo;
+        private string accNumber { set; get; }
+        private string name { set; get; }
+        private double saldo { set; get; }
 
         // Props para acessos controlados.
 
@@ -26,6 +26,7 @@ namespace BankAccount {
         public string getSaldo() {
             return $"Saldo: {Saldo}";
         }
+
         public string Deposit(double value) {
             if (value > 0) {
                 saldo += value;
@@ -35,6 +36,7 @@ namespace BankAccount {
                 return $"Valor do depósito invalido";
             }
         }
+
         public string Withdraw(double value) {
             if (value > 0 && value <= saldo) {
                 saldo -= value;
