@@ -1,0 +1,7 @@
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\BankAccount.exe
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\BankAccount.pdb
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.csproj.AssemblyReference.cache
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.csproj.SuggestedBindingRedirects.cache
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.csproj.CoreCompileInputs.cache
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.exe
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.pdb
