@@ -2,49 +2,33 @@ using System;
 
 namespace BankAccount {
     public class ContaBancaria {
-        private string accNumber { set; get; }
-        private string name { set; get; }
-        private double saldo { set; get; }
+        private string accNumber;
+        private string name;
+        private double balance;
 
-        // Props para acessos controlados.
-
-        public string AccNumber {
-            get => accNumber;
-            set => accNumber = accNumber = value;
+        public ContaBancaria(string accNumber, string name, double balance) {
+            this.accNumber = accNumber;
+            this.name = name;
+            this.balance = balance;
         }
 
-        public string Name {
-            get => name;
-            set => name = value;
+        public double current_balance => balance;
+
+        public string add_balance(double value) {
+            balance += value;
+            return $"Saldo atual: {balance:C}";
         }
 
-        public double Saldo {
-            get => saldo;
-            set => saldo = value;
-        }
-
-        public string getSaldo() {
-            return $"Saldo: {Saldo}";
-        }
-
-        public string Deposit(double value) {
-            if (value > 0) {
-                saldo += value;
-                return $"Depósito de {value} realizado com sucesso!";
+        public string withdraw_funds(double value) {
+            if (value <= balance) {
+                balance -= value;
+                return $"Saldo atual: {balance:C}";
             }
             else {
-                return $"Valor do depósito invalido";
+                return "Saldo insuficiente";
             }
         }
 
-        public string Withdraw(double value) {
-            if (value > 0 && value <= saldo) {
-                saldo -= value;
-                return $"Saque realizado com sucesso. Saldo total: {Saldo:C}";
-            }
-            else {
-                return $"Valor de saque invalido ou saldo insuficiente.";
-            }
-        }
+        public string get_acc_number() => accNumber;
+        public string get_owner_name() => name;
     }
-}
