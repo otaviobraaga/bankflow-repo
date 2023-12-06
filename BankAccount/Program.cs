@@ -1,11 +1,13 @@
 ﻿using System;
+using Dapper;
 
 namespace BankAccount {
     internal class Program {
+        
         public static void Main(string[] args) {
             Console.WriteLine("Bem-vindo ao banco Penes Preto!");
             ContaBancaria conta = new ContaBancaria();
-
+            
             int option;
 
             do {
@@ -20,13 +22,13 @@ namespace BankAccount {
                     case 1:
                         Console.WriteLine("Digite o valor a ser sacado: ");
                         double valorSaque = double.Parse(Console.ReadLine());
-                        string resultadoSaque = conta.Withdraw(valorSaque);
+                        string resultadoSaque = conta.withdraw_funds(valorSaque);
                         Console.WriteLine(resultadoSaque);
                         break;
                     case 2:
                         Console.WriteLine("Digite o valor a ser depositado: ");
                         double valorDeposito = double.Parse(Console.ReadLine());
-                        string resultadoDeposito = conta.Deposit(valorDeposito);
+                        string resultadoDeposito = conta.deposit_funds(valorDeposito);
                         Console.WriteLine(resultadoDeposito);
                         break;
                     case 0:

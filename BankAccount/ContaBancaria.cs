@@ -14,7 +14,7 @@ namespace BankAccount {
 
         public double current_balance => balance;
 
-        public string add_balance(double value) {
+        public string deposit_funds(double value) {
             balance += value;
             return $"Saldo atual: {balance:C}";
         }
@@ -32,3 +32,4 @@ namespace BankAccount {
         public string get_acc_number() => accNumber;
         public string get_owner_name() => name;
     }
+}

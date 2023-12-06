@@ -1,17 +1,24 @@
-using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TransferFunds {
+    [Table("Transfers")]
     public class Transfer {
-        private int Id { get; set; }
-        private string SenderAccount { get; set; }
-        private string BeneficiaryAccount { get; set; }
-        private float Value { get; set; }
-        private string CurrentStatus { get; set; }
-
+        private int Id;
+        private string SenderAccount;
+        private string BeneficiaryAccount;
+        private float Value;
+        private TransferState CurrentStatus;
+        
+        
         public enum TransferState {
             Pending,
             Approved,
             Denied
+        }
+        public TransferState Status {
+            get { return CurrentStatus;}
+            set { CurrentStatus = value; }
         }
 
         static void create_new_transfer() {
@@ -31,6 +38,7 @@ namespace TransferFunds {
             transfer.BeneficiaryAccount = destination_acc;
             transfer.Value = transfer_value;
 
+            transfer.Status = TransferState.Pending;
         }
             
     }
