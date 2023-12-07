@@ -1,10 +1,10 @@
 ﻿using System;
 
 namespace BankAccount {
-    internal class Program {
+    internal abstract class Program {
         public static void Main(string[] args) {
             Console.WriteLine("Bem-vindo ao banco Penes Preto!");
-            ContaBancaria conta = new ContaBancaria();
+            ContaBancaria conta = new ContaBancaria("9151699", "Otavio",198.99);
 
             int option;
 
@@ -19,14 +19,14 @@ namespace BankAccount {
                 switch (option) {
                     case 1:
                         Console.WriteLine("Digite o valor a ser sacado: ");
-                        double valorSaque = double.Parse(Console.ReadLine());
-                        string resultadoSaque = conta.Withdraw(valorSaque);
+                        double valorSaque = double.Parse(Console.ReadLine() ?? string.Empty);
+                        string resultadoSaque = conta.withdraw_funds(valorSaque);
                         Console.WriteLine(resultadoSaque);
                         break;
                     case 2:
                         Console.WriteLine("Digite o valor a ser depositado: ");
                         double valorDeposito = double.Parse(Console.ReadLine());
-                        string resultadoDeposito = conta.Deposit(valorDeposito);
+                        string resultadoDeposito = conta.add_balance(valorDeposito);
                         Console.WriteLine(resultadoDeposito);
                         break;
                     case 0:

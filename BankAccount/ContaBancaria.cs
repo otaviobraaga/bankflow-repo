@@ -2,33 +2,41 @@ using System;
 
 namespace BankAccount {
     public class ContaBancaria {
-        private string accNumber;
-        private string name;
-        private double balance;
+        private string _accNumber;
+        private string _name;
+        private double _balance;
 
         public ContaBancaria(string accNumber, string name, double balance) {
-            this.accNumber = accNumber;
-            this.name = name;
-            this.balance = balance;
+            _accNumber = accNumber;
+            _name = name;
+            _balance = balance;
         }
 
-        public double current_balance => balance;
+        public string AccNumber {
+            get => _accNumber;
+        }
+
+        public string Nome {
+            get => _name;
+            set {
+                if (value != null && value.Length > 1) {
+                    _name = value;
+                }
+            }
+        }
 
         public string add_balance(double value) {
-            balance += value;
-            return $"Saldo atual: {balance:C}";
+            return $"Saldo atual: {_balance:C}";
         }
 
         public string withdraw_funds(double value) {
-            if (value <= balance) {
-                balance -= value;
-                return $"Saldo atual: {balance:C}";
+            if (value <= _balance) {
+                _balance -= value;
+                return $"Saldo atual: {_balance:C}";
             }
             else {
                 return "Saldo insuficiente";
             }
         }
-
-        public string get_acc_number() => accNumber;
-        public string get_owner_name() => name;
     }
+}

@@ -17,19 +17,19 @@ namespace TransferFunds {
         static void create_new_transfer() {
             
             Console.WriteLine("Enter the origin account (numbers): ");
-            string origin_acc = Console.ReadLine();
+            string originAcc = Console.ReadLine();
             
             Console.WriteLine("Enter the destination account: ");
-            string destination_acc = Console.ReadLine();
+            string destinationAcc = Console.ReadLine();
             
             Console.WriteLine("Transfer value: ");
-            float transfer_value = float.Parse(Console.ReadLine());
+            float transferValue = float.Parse(Console.ReadLine());
 
             Transfer transfer = new Transfer();
 
-            transfer.SenderAccount = origin_acc;
-            transfer.BeneficiaryAccount = destination_acc;
-            transfer.Value = transfer_value;
+            transfer.SenderAccount = originAcc;
+            transfer.BeneficiaryAccount = destinationAcc;
+            transfer.Value = transferValue;
 
         }
             
