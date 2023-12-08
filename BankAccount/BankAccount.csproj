@@ -49,7 +49,7 @@
     <ItemGroup>
         <Compile Include="DB.cs" />
         <Compile Include="TransactRepo.cs" />
-        <Compile Include="TransfersFunds.cs" />
+        <Compile Include="TransferFunds.cs" />
         <Compile Include="ContaBancaria.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

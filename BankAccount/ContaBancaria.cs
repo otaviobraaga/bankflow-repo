@@ -2,18 +2,23 @@ using System;
 
 namespace BankAccount {
     public class ContaBancaria {
-        private string _accNumber;
-        private string _name;
+        public string AccNumber { get; private set; }
+        public string Name { get; private set; }
         private double _balance;
 
         public ContaBancaria(string accNumber, string name, double balance) {
-            this._accNumber = accNumber;
-            this._name = name;
-            this._balance = balance;
+            AccNumber = accNumber;
+            Name = name;
+            _balance = balance;
+        }
+
+        public double Balance {
+            get => _balance;
+            set {}
         }
 
         public string Account {
-            get => _accNumber;
+            get => AccNumber;
             set {
                 Console.Write("Haverá deposito inicial ? (s/n)");
                 char response = Console.ReadLine()[0];
@@ -34,10 +39,10 @@ namespace BankAccount {
         }
 
         public string Nome {
-            get => _name;
+            get => Name;
             set {
                 if (value != null && value.Length > 1) {
-                    _name = value;
+                    Name = value;
                 }
             }
         }
@@ -57,7 +62,7 @@ namespace BankAccount {
             }
         }
 
-        public string get_acc_number() => _accNumber;
-        public string get_owner_name() => _name;
+        public string get_acc_number() => AccNumber;
+        public string get_owner_name() => Name;
     }
 }
