@@ -7,13 +7,30 @@ namespace BankAccount {
         private double _balance;
 
         public ContaBancaria(string accNumber, string name, double balance) {
-            _accNumber = accNumber;
-            _name = name;
-            _balance = balance;
+            this._accNumber = accNumber;
+            this._name = name;
+            this._balance = balance;
         }
 
-        public string AccNumber {
+        public string Account {
             get => _accNumber;
+            set {
+                Console.Write("Haverá deposito inicial ? (s/n)");
+                char response = Console.ReadLine()[0];
+                if (response == 's' || response == 'S') {
+                    Console.WriteLine("Digite o valor do depósito inicial: ");
+                    double balance = double.Parse(Console.ReadLine());
+                    if (balance >= 0) {
+                        _balance = balance;
+                    }
+                    else {
+                        Console.WriteLine("O valor do depósito inicial deve ser maior ou igual a 0: ");
+                    }
+                }
+                else {
+                    _balance = 0;
+                }
+            }
         }
 
         public string Nome {
@@ -26,6 +43,7 @@ namespace BankAccount {
         }
 
         public string add_balance(double value) {
+            _balance += value;
             return $"Saldo atual: {_balance:C}";
         }
 
@@ -38,5 +56,8 @@ namespace BankAccount {
                 return "Saldo insuficiente";
             }
         }
+
+        public string get_acc_number() => _accNumber;
+        public string get_owner_name() => _name;
     }
 }

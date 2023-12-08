@@ -14,7 +14,7 @@ namespace BankAccount {
                 Console.WriteLine("2 - Depositar Dinheiros");
                 Console.WriteLine("0 - Sair do programa");
 
-                option = int.Parse(Console.ReadLine());
+                option = int.Parse(Console.ReadLine() ?? string.Empty);
 
                 switch (option) {
                     case 1:
@@ -25,7 +25,7 @@ namespace BankAccount {
                         break;
                     case 2:
                         Console.WriteLine("Digite o valor a ser depositado: ");
-                        double valorDeposito = double.Parse(Console.ReadLine());
+                        double valorDeposito = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                         string resultadoDeposito = conta.add_balance(valorDeposito);
                         Console.WriteLine(resultadoDeposito);
                         break;

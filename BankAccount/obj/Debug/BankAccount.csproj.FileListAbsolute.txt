@@ -5,3 +5,7 @@ D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount
 D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.csproj.CoreCompileInputs.cache
 D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.exe
 D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.pdb
+C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.csproj.AssemblyReference.cache
+C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.csproj.CoreCompileInputs.cache
+C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.exe
+C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.pdb
