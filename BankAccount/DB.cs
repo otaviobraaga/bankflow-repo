@@ -1,4 +1,4 @@
-using SQLite;
+/*using SQLite;
 
 namespace TransferFunds {
     public static class SQLiteDB {
@@ -13,4 +13,4 @@ namespace TransferFunds {
             }
         }
     }
-}
+}*/

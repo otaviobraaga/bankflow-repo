@@ -4,28 +4,40 @@ namespace BankAccount {
     internal abstract class Program {
         public static void Main(string[] args) {
             Console.WriteLine("Bem-vindo ao banco Penes Preto!");
-            ContaBancaria conta = new ContaBancaria("9151699", "Otavio",198.99);
+            ContaBancaria conta = new ContaBancaria();
 
             int option;
+            conta.Account = 
 
             do {
                 Console.WriteLine("Digite a opção desejada: ");
-                Console.WriteLine("1 - Sacar Dinheiros");
-                Console.WriteLine("2 - Depositar Dinheiros");
+                Console.WriteLine("1 - Sacar Dinheiro");
+                Console.WriteLine("2 - Depositar Dinheiro");
                 Console.WriteLine("0 - Sair do programa");
 
-                option = int.Parse(Console.ReadLine() ?? string.Empty);
+                if (!int.TryParse(Console.ReadLine(), out option)) {
+                    Console.WriteLine("Entrada inválida. Tente novamente.");
+                    continue;
+                }
 
                 switch (option) {
                     case 1:
                         Console.WriteLine("Digite o valor a ser sacado: ");
-                        double valorSaque = double.Parse(Console.ReadLine() ?? string.Empty);
+                        if (!double.TryParse(Console.ReadLine(), out double valorSaque)) {
+                            Console.WriteLine("Valor inválido. Tente novamente.");
+                            continue;
+                        }
+
                         string resultadoSaque = conta.withdraw_funds(valorSaque);
                         Console.WriteLine(resultadoSaque);
                         break;
                     case 2:
                         Console.WriteLine("Digite o valor a ser depositado: ");
-                        double valorDeposito = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
+                        if (!double.TryParse(Console.ReadLine(), out double valorDeposito)) {
+                            Console.WriteLine("Valor inválido. Tente novamente.");
+                            continue;
+                        }
+
                         string resultadoDeposito = conta.add_balance(valorDeposito);
                         Console.WriteLine(resultadoDeposito);
                         break;
@@ -33,7 +45,7 @@ namespace BankAccount {
                         Console.WriteLine("Saindo do programa");
                         break;
                     default:
-                        Console.WriteLine("Opçao inválida. Tente novamente");
+                        Console.WriteLine("Opção inválida. Tente novamente");
                         break;
                 }
             } while (option != 0);

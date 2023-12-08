@@ -9,3 +9,9 @@ C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\ob
 C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.csproj.CoreCompileInputs.cache
 C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.exe
 C:\Users\Sendy\Desktop\Estudos de Desenvolvimento\ContaCorrentPHP\BankAccount\obj\Debug\BankAccount.pdb
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\BankAccount.exe.config
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\EntityFramework.dll
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\EntityFramework.xml
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankAccount\obj\Debug\BankAccount.csproj.CopyComplete
