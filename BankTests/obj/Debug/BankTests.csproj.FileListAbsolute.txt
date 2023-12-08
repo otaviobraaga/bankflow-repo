@@ -1,0 +1,12 @@
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\BankTests.dll
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\BankTests.pdb
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\BankAccount.exe
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\nunit.framework.dll
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\BankAccount.pdb
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\BankAccount.exe.config
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\bin\Debug\nunit.framework.xml
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\obj\Debug\BankTests.csproj.AssemblyReference.cache
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\obj\Debug\BankTests.csproj.CoreCompileInputs.cache
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\obj\Debug\BankTests.csproj.CopyComplete
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\obj\Debug\BankTests.dll
+D:\Projetos Aleatorios\Projetos C#\BankAccount\BankTests\obj\Debug\BankTests.pdb
