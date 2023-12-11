@@ -1,6 +1,6 @@
 
 
-namespace BankAccount {
+namespace DatabaseManager {
     public class TransactRepo {
         
     }

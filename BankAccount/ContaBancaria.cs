@@ -1,82 +1,66 @@
 using System;
-using System.Collections.Concurrent;
-using System.Management.Instrumentation;
 
 namespace BankAccount {
     public class ContaBancaria {
-        public int AccNumber { get; private set; } //Numero da conta
-        public string Titular { get; private set; } //Titular da conta
-        private double Balance { get; set; } //Saldo da conta
+        public string AccNumber;
+        public string Name { get; private set; }
+        private double _balance;
 
-        public ContaBancaria(int numero, string titular) {
-            AccNumber = numero;
-            Titular = titular;
-
-            if (!GetConfirmation("Haverá depósito inicial ? (s/n)")) {
-                Balance = 0;
-                return;
-            }
-
-            Console.WriteLine("Digite o valor do depósito inicial: ");
-            if (!double.TryParse(Console.ReadLine(), out double initialDeposit) || initialDeposit < 0) {
-                Console.WriteLine("O valor do depósito deve ser maior ou igual a 0.");
-                return;
-            }
-
-            Balance = initialDeposit;
+        public ContaBancaria() {
         }
 
-        public double Saldo {
-            get => Balance;
+        public double Balance {
+            get => _balance;
+            set { }
+        }
+
+        public string Account {
+            get => AccNumber;
             set {
-                if (value >= 0) {
-                    Balance = value;
+                Console.Write("Haverá depósito inicial? (s/n)");
+                char response = Console.ReadLine()[0];
+                if (response == 's' || response == 'S') {
+                    Console.WriteLine("Digite o valor do depósito inicial: ");
+                    double initialDeposit;
+                    if (double.TryParse(Console.ReadLine(), out initialDeposit) && initialDeposit >= 0) {
+                        _balance = initialDeposit;
+                    }
+                    else {
+                        Console.WriteLine("O valor do depósito inicial deve ser maior ou igual a 0.");
+                    }
                 }
                 else {
-                    throw new InvalidOperationException("O valor do saldo deve ser maior ou igual a 0.");
+                    _balance = 0;
                 }
             }
         }
+
 
         public string Nome {
-            get => Titular;
+            get => Name;
             set {
                 if (value != null && value.Length > 1) {
-                    Titular = value;
-                }
-                else {
-                    throw new InvalidOperationException("O nome do titular deve ter pelo menos dois caracteres.");
+                    Name = value;
                 }
             }
         }
 
-        private static bool GetConfirmation(string message) {
-            Console.Write(message);
-            char response = Console.ReadLine()[0];
-            return response == 's' || response == 'S';
+        public string add_balance(double value) {
+            _balance += value;
+            return $"Saldo atual: {_balance:C}";
         }
-        public override string ToString() {
-            return $"Conta: {AccNumber}, Titular: {Titular}, Saldo: {Balance:C}";
-        }
-        public string withdraw_funds(double amount) {
-            if (amount > 0 && amount <= Balance) {
-                Balance -= amount;
-                return $"Saque realizado com sucesso. Saldo atual {Balance:C}";
+
+        public string withdraw_funds(double value) {
+            if (value > 0 && value <= _balance) {
+                _balance -= value;
+                return $"Saldo atual: {_balance:C}";
             }
             else {
-                return "Deposito não realizado. Valor inválido";
-            }
-        }
-        public string deposit_funds(double amount) {
-            if (amount > 0) {
-                Balance += amount;
-                return $"Deposito realizado com sucesso. Saldo atualizado: {Balance}";
-            }
-            else {
-                return "Valor invalido";
+                return "Saldo insuficiente ou valor invalido";
             }
         }
 
+        public string get_acc_number() => AccNumber;
+        public string get_owner_name() => Name;
     }
-
 }
