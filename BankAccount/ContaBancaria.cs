@@ -4,21 +4,22 @@ using System.Management.Instrumentation;
 
 namespace BankAccount {
     public class ContaBancaria {
-        public int AccNumber { get; private set; } //Numero da conta
+        public int AccountNumber { get; private set; } //Número da conta
         public string Titular { get; private set; } //Titular da conta
         private double Balance { get; set; } //Saldo da conta
 
         public ContaBancaria(int numero, string titular) {
-            AccNumber = numero;
+            AccountNumber = numero;
             Titular = titular;
 
-            if (!GetConfirmation("Haverá depósito inicial ? (s/n)")) {
+            if (!GetConfirmation("Haverá depósito inicial? (s/n)")) {
                 Balance = 0;
                 return;
             }
 
             Console.WriteLine("Digite o valor do depósito inicial: ");
-            if (!double.TryParse(Console.ReadLine(), out double initialDeposit) || initialDeposit < 0) {
+            double initialDeposit;
+            if (!double.TryParse(Console.ReadLine(), out initialDeposit) || initialDeposit < 0) {
                 Console.WriteLine("O valor do depósito deve ser maior ou igual a 0.");
                 return;
             }
@@ -31,8 +32,7 @@ namespace BankAccount {
             set {
                 if (value >= 0) {
                     Balance = value;
-                }
-                else {
+                } else {
                     throw new InvalidOperationException("O valor do saldo deve ser maior ou igual a 0.");
                 }
             }
@@ -41,10 +41,9 @@ namespace BankAccount {
         public string Nome {
             get => Titular;
             set {
-                if (value != null && value.Length > 1) {
+                if (value != null && value.Length >= 2) {
                     Titular = value;
-                }
-                else {
+                } else {
                     throw new InvalidOperationException("O nome do titular deve ter pelo menos dois caracteres.");
                 }
             }
@@ -55,28 +54,31 @@ namespace BankAccount {
             char response = Console.ReadLine()[0];
             return response == 's' || response == 'S';
         }
+
         public override string ToString() {
-            return $"Conta: {AccNumber}, Titular: {Titular}, Saldo: {Balance:C}";
+            return $"Conta: {AccountNumber}, Titular: {Titular}, Saldo: {Balance:C}";
         }
-        public string withdraw_funds(double amount) {
-            if (amount > 0 && amount <= Balance) {
+
+        public string WithdrawFunds(double amount) {
+            if (IsValidAmount(amount) && Balance >= amount) {
                 Balance -= amount;
-                return $"Saque realizado com sucesso. Saldo atual {Balance:C}";
-            }
-            else {
-                return "Deposito não realizado. Valor inválido";
+                return $"Saque realizado com sucesso. Saldo atual: {Balance:C}";
+            } else {
+                return "Saque não realizado. Valor inválido ou saldo insuficiente.";
             }
         }
-        public string deposit_funds(double amount) {
-            if (amount > 0) {
+
+        public string DepositFunds(double amount) {
+            if (IsValidAmount(amount)) {
                 Balance += amount;
-                return $"Deposito realizado com sucesso. Saldo atualizado: {Balance:C}";
-            }
-            else {
-                return "Valor invalido";
+                return $"Depósito realizado com sucesso. Saldo atualizado: {Balance:C}";
+            } else {
+                return "Valor inválido.";
             }
         }
 
+        private bool IsValidAmount(double amount) {
+            return amount >= 0;
+        }
     }
-
 }

@@ -34,7 +34,7 @@ namespace BankAccount {
                             continue;
                         }
 
-                        string resultadoSaque = conta.withdraw_funds(valorSaque);
+                        string resultadoSaque = conta.WithdrawFunds(valorSaque);
                         Console.WriteLine(resultadoSaque);
                         break;
                     case 2:
@@ -44,7 +44,7 @@ namespace BankAccount {
                             continue;
                         }
 
-                        string resultadoDeposito = conta.deposit_funds(valorDeposito);
+                        string resultadoDeposito = conta.DepositFunds(valorDeposito);
                         Console.WriteLine(resultadoDeposito);
                         break;
                     case 0:
