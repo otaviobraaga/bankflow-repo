@@ -3,3 +3,9 @@
 .vs/
 packages/
 *.DotSettings.user
+# Ignorar diretórios e arquivos gerados pela compilação
+bin/
+obj/
+# Ignorar arquivos específicos
+App.config
+packages.config

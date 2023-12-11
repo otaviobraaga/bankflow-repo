@@ -36,7 +36,6 @@ namespace BankAccount {
         }
 
 
-
         public string Nome {
             get => Name;
             set {

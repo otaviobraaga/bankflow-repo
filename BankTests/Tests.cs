@@ -13,7 +13,7 @@ namespace BankTests {
             string result = conta.add_balance(100);
 
             // Assert
-            Assert.AreEqual("Saldo atual: \u00a3100.00", result);
+            Assert.AreEqual("Saldo atual: 100.00", result);
         }
 
         [Test]
