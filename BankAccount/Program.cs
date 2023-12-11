@@ -3,7 +3,7 @@ using BankAccount;
 
 internal abstract class Program {
     public static void Main(string[] args) {
-        Console.WriteLine("Bem-vindo ao banco Banco Pão!");
+        Console.WriteLine("Bem-vindo ao Banco Pão!");
 
         Console.WriteLine("Digite o número da conta: ");
         string accNumber = Console.ReadLine();
