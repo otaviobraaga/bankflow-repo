@@ -1,9 +1,7 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using BankAccount;
 
-namespace TransferFunds {
+namespace BankAccount {
     public enum TransferStateEnum {
         Pending,
         Approved,
@@ -24,7 +22,7 @@ namespace TransferFunds {
         }
 
         public void ProcessTransfer(ContaBancaria senderAccount, ContaBancaria beneficiaryAccount) {
-            if (senderAccount.Balance < Value) {
+            if (senderAccount.Saldo < Value) {
                 Console.WriteLine("Saldo insuficiente.");
                 Status = TransferStateEnum.Failed;
             }
@@ -33,8 +31,8 @@ namespace TransferFunds {
                 Status = TransferStateEnum.Denied;
             }
             else {
-                senderAccount.Balance -= Value;
-                beneficiaryAccount.Balance += Value;
+                senderAccount.Saldo -= Value;
+                beneficiaryAccount.Saldo += Value;
                 Status = TransferStateEnum.Approved;
             }
         }
